@@ -1,0 +1,69 @@
+joint_limits:
+  right_shoul_base2shoul_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_shoul2shoul_rot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_arm2armrot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_armrot2elbow_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_forearm2forearmrot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_forearmrot2forearm_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  right_forearm_pitch2forearm_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_shoul_base2shoul_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_shoul2shoul_rot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_arm2armrot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_armrot2elbow_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_forearm2forearmrot_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_forearmrot2forearm_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  left_forearm_pitch2forearm_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  head_base2neck_yaw_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  neck_yaw2pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false
+  neck_pitch2head_depth_cam_mount_joint:
+    has_velocity_limits: true
+    max_velocity: 15.0
+    has_acceleration_limits: false

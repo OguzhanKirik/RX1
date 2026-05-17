@@ -1,0 +1,84 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (1.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/oguz/rx1/build/rx1_description
+-- Install configuration: ""
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/record_urdf_test.launch
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/urdf.launch.py
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/urdf_test.launch.py
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/urdf_test.launch
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/__pycache__
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/__pycache__/record_urdf_test.launch.cpython-312.pyc
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/__pycache__/urdf.launch.cpython-312.pyc
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/__pycache__/urdf_test.launch.cpython-312.pyc
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/record_urdf_test.launch.py
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/launch/urdf.launch
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/head_depth_cam_mount_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/left_ear_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/neck_yaw_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/neck_pitch_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/right_ear_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/head/head_base_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/torso_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_forearm_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_forearm_yaw_link v3.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_elbow_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_upper_arm_link v4.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_hand_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_shoul_link v2.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_forearm_pitch_link v2.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_forearm_roll_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_upper_arm_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/right_arm/right_shoul_base_link v2.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/left_arm
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/left_arm/left_elbow_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/left_arm/left_hand_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/left_arm/left_upper_arm_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/left_arm/left_forearm_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/base_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/torso_yaw_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/archive
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/archive/torso_base_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/archive/torso_link.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/meshes/archive/torso_link_v2.stl
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/rviz
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/rviz/urdf.rviz
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/scripts
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/scripts/calc_inertia.py
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/urdf
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/urdf/rx1.gazebo.urdf
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/urdf/rx1.urdf.xacro
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/urdf/transmission.urdf
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/urdf/rx1.urdf
+-- Installing: /home/oguz/rx1/install/rx1_description/share/ament_index/resource_index/package_run_dependencies/rx1_description
+-- Installing: /home/oguz/rx1/install/rx1_description/share/ament_index/resource_index/parent_prefix_path/rx1_description
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/environment/ament_prefix_path.sh
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/environment/ament_prefix_path.dsv
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/environment/path.sh
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/environment/path.dsv
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/local_setup.bash
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/local_setup.sh
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/local_setup.zsh
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/local_setup.dsv
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/package.dsv
+-- Installing: /home/oguz/rx1/install/rx1_description/share/ament_index/resource_index/packages/rx1_description
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/cmake/rx1_descriptionConfig.cmake
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/cmake/rx1_descriptionConfig-version.cmake
+-- Installing: /home/oguz/rx1/install/rx1_description/share/rx1_description/package.xml

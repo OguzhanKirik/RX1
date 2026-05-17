@@ -1,0 +1,107 @@
+[0.150s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '--base-paths', 'src/rx1']
+[0.150s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['src/rx1'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=False, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b424a4bd790>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7b424a4464b0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7b424a4464b0>>, mixin_verb=('list',))
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.225s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/oguz/rx1/src/rx1'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['ignore', 'ignore_ament_install']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'ignore'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'ignore_ament_install'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['colcon_pkg']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'colcon_pkg'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['colcon_meta']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'colcon_meta'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['ros']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'ros'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['cmake', 'python']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'cmake'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'python'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extensions ['python_setup_py']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1) by extension 'python_setup_py'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['ignore', 'ignore_ament_install']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'ignore'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'ignore_ament_install'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['colcon_pkg']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'colcon_pkg'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['colcon_meta']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'colcon_meta'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['ros']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'ros'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['cmake', 'python']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'cmake'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'python'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extensions ['python_setup_py']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/media) by extension 'python_setup_py'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extension 'ignore'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extension 'ignore_ament_install'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extensions ['colcon_pkg']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extension 'colcon_pkg'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extensions ['colcon_meta']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extension 'colcon_meta'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extensions ['ros']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1) by extension 'ros'
+[0.256s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1' with type 'ros.ament_cmake' and name 'rx1'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extension 'ignore'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extension 'ignore_ament_install'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extensions ['colcon_pkg']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extension 'colcon_pkg'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extensions ['colcon_meta']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extension 'colcon_meta'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extensions ['ros']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_bringup) by extension 'ros'
+[0.256s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_bringup' with type 'ros.ament_cmake' and name 'rx1_bringup'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extension 'colcon_meta'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extensions ['ros']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_description) by extension 'ros'
+[0.257s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_description' with type 'ros.ament_cmake' and name 'rx1_description'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extension 'colcon_meta'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extensions ['ros']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_gazebo) by extension 'ros'
+[0.258s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_gazebo' with type 'ros.ament_cmake' and name 'rx1_gazebo'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extension 'ignore'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extension 'ignore_ament_install'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extensions ['colcon_pkg']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extension 'colcon_pkg'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extensions ['colcon_meta']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extension 'colcon_meta'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extensions ['ros']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_ik) by extension 'ros'
+[0.259s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_ik' with type 'ros.ament_cmake' and name 'rx1_ik'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extensions ['ignore', 'ignore_ament_install']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extension 'ignore'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extension 'ignore_ament_install'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extensions ['colcon_pkg']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extension 'colcon_pkg'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extension 'colcon_meta'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extensions ['ros']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor) by extension 'ros'
+[0.260s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_motor' with type 'ros.ament_cmake' and name 'rx1_motor'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extensions ['ros']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/rx1/rx1_motor_lib) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rx1/rx1_motor_lib' with type 'ros.ament_cmake' and name 'rx1_motor_lib'
+[0.261s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
