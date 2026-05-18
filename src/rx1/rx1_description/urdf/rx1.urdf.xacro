@@ -29,7 +29,8 @@
     <link name="base_link">
         <inertial>
             <mass value="5.0" />
-            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.2" />
+            <!-- Keep the root inertia physically valid for Gazebo Harmonic. -->
+            <inertia ixx="0.18" ixy="0.0" ixz="0.0" iyy="0.16" iyz="0.0" izz="0.2" />
         </inertial>
 
         <visual>
