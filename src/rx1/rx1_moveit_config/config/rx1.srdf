@@ -15,22 +15,25 @@
     <group name="left_arm"/>
   </group>
 
+  <group name="torso">
+    <joint name="base2torso_yaw_joint"/>
+    <joint name="torso_yaw2pitch_joint"/>
+    <joint name="torso_pitch2roll_joint"/>
+  </group>
+
+  <group name="right_arm_with_torso">
+    <chain base_link="base_link" tip_link="right_hand_link"/>
+  </group>
+
+  <group name="left_arm_with_torso">
+    <chain base_link="base_link" tip_link="left_hand_link"/>
+  </group>
+
   <group name="head">
     <joint name="head_base2neck_yaw_joint"/>
     <joint name="neck_yaw2pitch_joint"/>
     <joint name="neck_pitch2head_depth_cam_mount_joint"/>
   </group>
-
-  <group name="right_hand_eef">
-    <link name="right_hand_link"/>
-  </group>
-
-  <group name="left_hand_eef">
-    <link name="left_hand_link"/>
-  </group>
-
-  <end_effector name="right_hand" parent_link="right_hand_link" group="right_hand_eef"/>
-  <end_effector name="left_hand" parent_link="left_hand_link" group="left_hand_eef"/>
 
   <group_state name="arms_home" group="right_arm">
     <joint name="right_shoul_base2shoul_joint" value="0.0"/>
@@ -43,6 +46,38 @@
   </group_state>
 
   <group_state name="arms_home" group="left_arm">
+    <joint name="left_shoul_base2shoul_joint" value="0.0"/>
+    <joint name="left_shoul2shoul_rot_joint" value="0.0"/>
+    <joint name="left_arm2armrot_joint" value="0.0"/>
+    <joint name="left_armrot2elbow_joint" value="-1.57"/>
+    <joint name="left_forearm2forearmrot_joint" value="0.0"/>
+    <joint name="left_forearmrot2forearm_pitch_joint" value="0.0"/>
+    <joint name="left_forearm_pitch2forearm_roll_joint" value="0.0"/>
+  </group_state>
+
+  <group_state name="torso_home" group="torso">
+    <joint name="base2torso_yaw_joint" value="0.0"/>
+    <joint name="torso_yaw2pitch_joint" value="0.0"/>
+    <joint name="torso_pitch2roll_joint" value="0.0"/>
+  </group_state>
+
+  <group_state name="home" group="right_arm_with_torso">
+    <joint name="base2torso_yaw_joint" value="0.0"/>
+    <joint name="torso_yaw2pitch_joint" value="0.0"/>
+    <joint name="torso_pitch2roll_joint" value="0.0"/>
+    <joint name="right_shoul_base2shoul_joint" value="0.0"/>
+    <joint name="right_shoul2shoul_rot_joint" value="0.0"/>
+    <joint name="right_arm2armrot_joint" value="0.0"/>
+    <joint name="right_armrot2elbow_joint" value="-1.57"/>
+    <joint name="right_forearm2forearmrot_joint" value="0.0"/>
+    <joint name="right_forearmrot2forearm_pitch_joint" value="0.0"/>
+    <joint name="right_forearm_pitch2forearm_roll_joint" value="0.0"/>
+  </group_state>
+
+  <group_state name="home" group="left_arm_with_torso">
+    <joint name="base2torso_yaw_joint" value="0.0"/>
+    <joint name="torso_yaw2pitch_joint" value="0.0"/>
+    <joint name="torso_pitch2roll_joint" value="0.0"/>
     <joint name="left_shoul_base2shoul_joint" value="0.0"/>
     <joint name="left_shoul2shoul_rot_joint" value="0.0"/>
     <joint name="left_arm2armrot_joint" value="0.0"/>
