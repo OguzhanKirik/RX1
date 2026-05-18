@@ -45,8 +45,23 @@ def generate_launch_description():
     planning_pipeline_config = {
         "planning_pipelines": ["ompl"],
         "default_planning_pipeline": "ompl",
-        "ompl": ompl_planning,
+        "ompl": {
+            "planning_plugins": ["ompl_interface/OMPLPlanner"],
+            "request_adapters": [
+                "default_planning_request_adapters/ResolveConstraintFrames",
+                "default_planning_request_adapters/ValidateWorkspaceBounds",
+                "default_planning_request_adapters/CheckStartStateBounds",
+                "default_planning_request_adapters/CheckStartStateCollision",
+            ],
+            "response_adapters": [
+                "default_planning_response_adapters/AddTimeOptimalParameterization",
+                "default_planning_response_adapters/ValidateSolution",
+                "default_planning_response_adapters/DisplayMotionPath",
+            ],
+            "start_state_max_bounds_error": 0.1,
+        },
     }
+    planning_pipeline_config["ompl"].update(ompl_planning)
 
     trajectory_execution = {
         "allow_trajectory_execution": False,

@@ -1,0 +1,3 @@
+source;share/rx1_motor/environment/ament_prefix_path.sh
+source;share/rx1_motor/environment/library_path.sh
+source;share/rx1_motor/environment/path.sh

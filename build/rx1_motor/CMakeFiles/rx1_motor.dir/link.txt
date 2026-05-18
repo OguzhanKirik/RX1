@@ -1,0 +1,2 @@
+/usr/bin/ar qc librx1_motor.a CMakeFiles/rx1_motor.dir/src/rx1_motor/rx1_motor.cpp.o
+/usr/bin/ranlib librx1_motor.a

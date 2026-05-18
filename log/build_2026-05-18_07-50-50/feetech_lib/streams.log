@@ -1,0 +1,49 @@
+[0.014s] Invoking command in '/home/oguz/rx1/build/feetech_lib': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/oguz/rx1/build/feetech_lib -- -j16 -l16
+[0.042s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.436s] -- Configuring done (0.4s)
+[0.451s] -- Generating done (0.0s)
+[0.459s] -- Build files have been written to: /home/oguz/rx1/build/feetech_lib
+[0.522s] [ 28%] Building CXX object CMakeFiles/feetech_lib.dir/src/SMSBL.cpp.o
+[0.522s] [ 28%] Building CXX object CMakeFiles/feetech_lib.dir/src/SCS.cpp.o
+[0.522s] [ 42%] Building CXX object CMakeFiles/feetech_lib.dir/src/SCSCL.cpp.o
+[0.524s] [ 71%] Building CXX object CMakeFiles/feetech_lib.dir/src/SCSerial.cpp.o
+[0.524s] [ 71%] Building CXX object CMakeFiles/feetech_lib.dir/src/SMS_STS.cpp.o
+[0.526s] [ 85%] Building CXX object CMakeFiles/feetech_lib.dir/src/SMSCL.cpp.o
+[0.609s] [100%] Linking CXX static library libfeetech_lib.a
+[0.797s] [100%] Built target feetech_lib
+[0.813s] Invoked command in '/home/oguz/rx1/build/feetech_lib' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/oguz/rx1/build/feetech_lib -- -j16 -l16
+[0.839s] Invoking command in '/home/oguz/rx1/build/feetech_lib': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/oguz/rx1/build/feetech_lib
+[0.859s] -- Install configuration: ""
+[0.860s] -- Installing: /home/oguz/rx1/install/feetech_lib/lib/libfeetech_lib.a
+[0.860s] -- Installing: /home/oguz/rx1/install/feetech_lib/include
+[0.861s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib
+[0.861s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SMSCL.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SMSBL.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SCServo.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SCSCL.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SCS.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SCSerial.h
+[0.862s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/SMS_STS.h
+[0.863s] -- Installing: /home/oguz/rx1/install/feetech_lib/include/feetech_lib/INST.h
+[0.863s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/library_path.sh
+[0.863s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/library_path.dsv
+[0.863s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/ament_index/resource_index/package_run_dependencies/feetech_lib
+[0.864s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/ament_index/resource_index/parent_prefix_path/feetech_lib
+[0.864s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/ament_prefix_path.sh
+[0.864s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/ament_prefix_path.dsv
+[0.865s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/path.sh
+[0.865s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/environment/path.dsv
+[0.865s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/local_setup.bash
+[0.865s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/local_setup.sh
+[0.865s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/local_setup.zsh
+[0.866s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/local_setup.dsv
+[0.866s] -- Up-to-date: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/package.dsv
+[0.866s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/ament_index/resource_index/packages/feetech_lib
+[0.866s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/export_feetech_libExport.cmake
+[0.866s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/export_feetech_libExport-noconfig.cmake
+[0.867s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.867s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/ament_cmake_export_targets-extras.cmake
+[0.867s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/feetech_libConfig.cmake
+[0.867s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake/feetech_libConfig-version.cmake
+[0.867s] -- Installing: /home/oguz/rx1/install/feetech_lib/share/feetech_lib/package.xml
+[0.870s] Invoked command in '/home/oguz/rx1/build/feetech_lib' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/oguz/rx1/build/feetech_lib

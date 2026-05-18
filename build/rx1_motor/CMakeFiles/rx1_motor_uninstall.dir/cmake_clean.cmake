@@ -1,0 +1,8 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/rx1_motor_uninstall"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/rx1_motor_uninstall.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

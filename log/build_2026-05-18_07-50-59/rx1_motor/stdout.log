@@ -1,0 +1,55 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found feetech_lib: 0.0.1 (/home/oguz/rx1/install/feetech_lib/share/feetech_lib/cmake)
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/oguz/rx1/build/rx1_motor
+[ 25%] Building CXX object CMakeFiles/rx1_motor.dir/src/rx1_motor/rx1_motor.cpp.o
+[ 50%] Linking CXX static library librx1_motor.a
+[ 50%] Built target rx1_motor
+[ 75%] Building CXX object CMakeFiles/rx1_motor_node.dir/src/rx1_motor_node.cpp.o
+[100%] Linking CXX executable rx1_motor_node
+[100%] Built target rx1_motor_node
+-- Install configuration: ""
+-- Installing: /home/oguz/rx1/install/rx1_motor/lib/librx1_motor.a
+-- Installing: /home/oguz/rx1/install/rx1_motor/lib/rx1_motor/rx1_motor_node
+-- Set non-toolchain portion of runtime path of "/home/oguz/rx1/install/rx1_motor/lib/rx1_motor/rx1_motor_node" to ""
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/include
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/include/rx1_motor
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/include/rx1_motor/rx1_motor.hpp
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/launch
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/launch/rx1_motor.launch
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/launch/rx1_motor.launch.py
+-- Installing: /home/oguz/rx1/install/rx1_motor/include
+-- Installing: /home/oguz/rx1/install/rx1_motor/include/rx1_motor
+-- Installing: /home/oguz/rx1/install/rx1_motor/include/rx1_motor/rx1_motor.hpp
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/library_path.sh
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/library_path.dsv
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/ament_index/resource_index/package_run_dependencies/rx1_motor
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/ament_index/resource_index/parent_prefix_path/rx1_motor
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/ament_prefix_path.sh
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/ament_prefix_path.dsv
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/path.sh
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/environment/path.dsv
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/local_setup.bash
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/local_setup.sh
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/local_setup.zsh
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/local_setup.dsv
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/package.dsv
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/ament_index/resource_index/packages/rx1_motor
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/export_rx1_motorExport.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/export_rx1_motorExport-noconfig.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/rx1_motorConfig.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/cmake/rx1_motorConfig-version.cmake
+-- Installing: /home/oguz/rx1/install/rx1_motor/share/rx1_motor/package.xml

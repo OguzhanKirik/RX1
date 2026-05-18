@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-8f27315a60fc2e7cbc67.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "rx1_motor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "rx1_motor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rx1_motor-3af65c988f4b4defd4cc.json",
+					"name" : "rx1_motor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rx1_motor_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rx1_motor_node-d4274ebb0985c6e5642f.json",
+					"name" : "rx1_motor_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rx1_motor_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rx1_motor_uninstall-90d2340bd3e57204b633.json",
+					"name" : "rx1_motor_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-d89b32322389ca4d7bf1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/oguz/rx1/build/rx1_motor",
+		"source" : "/home/oguz/rx1/src/rx1/rx1_motor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
