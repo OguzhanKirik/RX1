@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfeetech_lib.a CMakeFiles/feetech_lib.dir/src/SCS.cpp.o CMakeFiles/feetech_lib.dir/src/SCSCL.cpp.o CMakeFiles/feetech_lib.dir/src/SCSerial.cpp.o CMakeFiles/feetech_lib.dir/src/SMSBL.cpp.o CMakeFiles/feetech_lib.dir/src/SMSCL.cpp.o CMakeFiles/feetech_lib.dir/src/SMS_STS.cpp.o
-/usr/bin/ranlib libfeetech_lib.a

@@ -1,2 +1,0 @@
-Invoking command in '/home/oguz/rx1/build/rx1_motor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/oguz/rx1/src/rx1/rx1_motor -DCMAKE_INSTALL_PREFIX=/home/oguz/rx1/install/rx1_motor
-Invoked command in '/home/oguz/rx1/build/rx1_motor' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/oguz/rx1/src/rx1/rx1_motor -DCMAKE_INSTALL_PREFIX=/home/oguz/rx1/install/rx1_motor
