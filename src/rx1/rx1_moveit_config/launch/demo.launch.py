@@ -5,7 +5,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.conditions import IfCondition, UnlessCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
@@ -26,6 +26,7 @@ def load_text(package_name, relative_path):
 def generate_launch_description():
     use_rviz = LaunchConfiguration("use_rviz")
     use_gui = LaunchConfiguration("use_gui")
+    use_fake_hardware = LaunchConfiguration("use_fake_hardware")
     rviz_config = os.path.join(
         get_package_share_directory("rx1_moveit_config"), "config", "moveit.rviz"
     )
@@ -41,6 +42,7 @@ def generate_launch_description():
     }
     ompl_planning = load_yaml("rx1_moveit_config", "config/ompl_planning.yaml")
     joint_limits = {"robot_description_planning": load_yaml("rx1_moveit_config", "config/joint_limits.yaml")}
+    moveit_controllers = load_yaml("rx1_moveit_config", "config/moveit_controllers.yaml")
 
     planning_pipeline_config = {
         "planning_pipelines": ["ompl"],
@@ -64,7 +66,7 @@ def generate_launch_description():
     planning_pipeline_config["ompl"].update(ompl_planning)
 
     trajectory_execution = {
-        "allow_trajectory_execution": False,
+        "allow_trajectory_execution": True,
         "moveit_manage_controllers": False,
     }
 
@@ -79,20 +81,32 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument("use_rviz", default_value="true"),
-        DeclareLaunchArgument("use_gui", default_value="true"),
+        DeclareLaunchArgument("use_gui", default_value="false"),
+        DeclareLaunchArgument("use_fake_hardware", default_value="true"),
         Node(
             package="joint_state_publisher_gui",
             executable="joint_state_publisher_gui",
             name="joint_state_publisher_gui",
             output="screen",
-            condition=IfCondition(use_gui),
+            condition=IfCondition(
+                PythonExpression(["'", use_gui, "' == 'true' and '", use_fake_hardware, "' == 'false'"])
+            ),
         ),
         Node(
             package="joint_state_publisher",
             executable="joint_state_publisher",
             name="joint_state_publisher",
             output="screen",
-            condition=UnlessCondition(use_gui),
+            condition=IfCondition(
+                PythonExpression(["'", use_gui, "' == 'false' and '", use_fake_hardware, "' == 'false'"])
+            ),
+        ),
+        Node(
+            package="rx1_moveit_config",
+            executable="fake_joint_trajectory_controller.py",
+            name="rx1_fake_controller",
+            output="screen",
+            condition=IfCondition(use_fake_hardware),
         ),
         Node(
             package="robot_state_publisher",
@@ -118,6 +132,7 @@ def generate_launch_description():
                 robot_description_kinematics,
                 planning_pipeline_config,
                 joint_limits,
+                moveit_controllers,
                 trajectory_execution,
                 planning_scene_monitor_parameters,
             ],
