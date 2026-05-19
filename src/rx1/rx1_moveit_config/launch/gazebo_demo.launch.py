@@ -8,9 +8,6 @@ from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-import xacro
-
-
 def load_yaml(package_name, relative_path):
     package_path = get_package_share_directory(package_name)
     absolute_path = os.path.join(package_path, relative_path)
@@ -26,27 +23,18 @@ def load_text(package_name, relative_path):
 
 
 def generate_launch_description():
-    use_rviz = LaunchConfiguration("use_rviz")
+    moveit_use_rviz = LaunchConfiguration("moveit_use_rviz")
+    world = LaunchConfiguration("world")
+    robot_name = LaunchConfiguration("robot_name")
+    robot_x = LaunchConfiguration("robot_x")
+    robot_y = LaunchConfiguration("robot_y")
+    robot_z = LaunchConfiguration("robot_z")
 
     rx1_gazebo_share = get_package_share_directory("rx1_gazebo")
     rx1_description_share = get_package_share_directory("rx1_description")
 
-    robot_description_file = os.path.join(
-        rx1_description_share, "urdf", "rx1.harmonic.urdf.xacro"
-    )
-    controllers_file = os.path.join(
-        rx1_gazebo_share, "config", "rx1_harmonic_controllers.yaml"
-    )
-    robot_description_content = xacro.process_file(
-        robot_description_file,
-        mappings={
-            "controllers_file": controllers_file,
-            "rgbd_topic_root": "/rx1/rgbd_camera",
-        },
-    ).toxml()
-
     robot_description = {
-        "robot_description": robot_description_content,
+        "robot_description": load_text("rx1_description", "urdf/rx1.urdf"),
         "use_sim_time": True,
     }
     robot_description_semantic = {
@@ -107,7 +95,14 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(rx1_gazebo_share, "launch", "rx1_gazebo.launch.py")
         ),
-        launch_arguments={"use_rviz": "false"}.items(),
+        launch_arguments={
+            "world": world,
+            "robot_name": robot_name,
+            "robot_x": robot_x,
+            "robot_y": robot_y,
+            "robot_z": robot_z,
+            "use_rviz": "false",
+        }.items(),
     )
 
     move_group = Node(
@@ -130,8 +125,8 @@ def generate_launch_description():
         package="rviz2",
         executable="rviz2",
         name="rviz2",
-        output="log",
-        condition=IfCondition(use_rviz),
+        output="screen",
+        condition=IfCondition(moveit_use_rviz),
         arguments=[
             "-d",
             os.path.join(
@@ -152,7 +147,17 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
-            DeclareLaunchArgument("use_rviz", default_value="true"),
+            DeclareLaunchArgument("moveit_use_rviz", default_value="true"),
+            DeclareLaunchArgument(
+                "world",
+                default_value=os.path.join(
+                    rx1_gazebo_share, "worlds", "rx1_table_world.sdf"
+                ),
+            ),
+            DeclareLaunchArgument("robot_name", default_value="rx1"),
+            DeclareLaunchArgument("robot_x", default_value="0.0"),
+            DeclareLaunchArgument("robot_y", default_value="0.0"),
+            DeclareLaunchArgument("robot_z", default_value="0.0"),
             sim_launch,
             move_group,
             rviz,

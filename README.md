@@ -140,12 +140,28 @@ Important:
 
 Gazebo support has been ported toward ROS 2, but it may still require controller-side tuning depending on your setup.
 
-Launch:
+Launch Gazebo only:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 launch rx1_gazebo rx1_gazebo.launch.py
+```
+
+Launch Gazebo with the simulation RViz view:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+ros2 launch rx1_gazebo rx1_gazebo_rviz.launch.py
+```
+
+Launch Gazebo with MoveIt planning in RViz:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+ros2 launch rx1_moveit_config gazebo_demo.launch.py
 ```
 
 ## Legacy IK Path
