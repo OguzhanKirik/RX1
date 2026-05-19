@@ -27,7 +27,7 @@ Current direction:
 
 Known gaps:
 
-* Gazebo execution and controller integration may still need cleanup depending on your ROS 2 distro and simulator stack
+* Gazebo and MoveIt execution now work on the maintained Jazzy path, but simulator startup still depends on the ROS 2 / Gazebo Harmonic stack being available locally
 * `ik_solver_lib` is still needed only if you want to keep the old custom IK workflow
 * hardware use still requires the proper serial device, servo IDs, and safe testing on the real robot
 
@@ -79,6 +79,15 @@ Recommended ROS 2 distro:
 
 * Jazzy on Ubuntu
 
+## Current Launch Defaults
+
+The maintained simulation path now uses optimized collision-model copies by default:
+
+* MoveIt model: `rx1_optimized.urdf.xacro`
+* Gazebo model: `rx1_optimized.harmonic.urdf.xacro`
+
+The original model files are still kept in the repository and can be selected manually through launch arguments if needed.
+
 ## MoveIt 2 Demo
 
 MoveIt 2 is the recommended way to work with RX1 in ROS 2.
@@ -103,6 +112,7 @@ Notes:
 
 * the orange overlay in RViz is typically the MoveIt goal state visualization, not a collision by itself
 * octomap sensor warnings can appear even when planning in RViz is otherwise working
+* the optimized model reduces collision-check cost while keeping the original visual meshes
 
 ## URDF / RViz Demo
 
@@ -138,13 +148,19 @@ Important:
 
 ## Gazebo
 
-Gazebo support has been ported toward ROS 2, but it may still require controller-side tuning depending on your setup.
+Gazebo support has been ported toward ROS 2 and the maintained Jazzy path now includes:
+
+* default optimized simulation models
+* a Gazebo-specific RViz config
+* delayed controller startup to avoid `controller_manager` races
+* a `gazebo_demo.launch.py` flow that waits for the simulated trajectory action server before starting the MoveIt side
 
 Launch Gazebo only:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
+unset ROS_LOCALHOST_ONLY
 ros2 launch rx1_gazebo rx1_gazebo.launch.py
 ```
 
@@ -153,6 +169,7 @@ Launch Gazebo with the simulation RViz view:
 ```bash
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
+unset ROS_LOCALHOST_ONLY
 ros2 launch rx1_gazebo rx1_gazebo_rviz.launch.py
 ```
 
@@ -161,8 +178,29 @@ Launch Gazebo with MoveIt planning in RViz:
 ```bash
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
+unset ROS_LOCALHOST_ONLY
 ros2 launch rx1_moveit_config gazebo_demo.launch.py
 ```
+
+What this gives you:
+
+* Gazebo simulation
+* controller startup through `gz_ros2_control`
+* RViz with MoveIt
+* execution through `rx1_joint_trajectory_controller`
+
+Useful launch arguments:
+
+* `robot_x:=... robot_y:=... robot_z:=...` to place the robot in the world
+* `moveit_model:=...` and `sim_model:=...` if you want to override the optimized defaults in `gazebo_demo.launch.py`
+* `model:=...` if you want to override the optimized default in `rx1_gazebo_rviz.launch.py`
+
+Simulation notes:
+
+* `gazebo_demo.launch.py` now starts the MoveIt side only after the simulated `follow_joint_trajectory` action server is available
+* MoveIt uses a stamped `/joint_states_moveit` stream internally to avoid zero-timestamp execution failures from the raw sim state stream
+* if RViz camera rendering is unstable on your GPU driver, keep camera displays disabled in MoveIt RViz and use `ros2 run rqt_image_view rqt_image_view` to inspect `/rx1/rgbd_camera/image` or `/rx1/rgbd_camera/depth_image`
+* the repeated `base_link` inertia warning from KDL is non-fatal and does not block planning or execution
 
 ## Legacy IK Path
 
