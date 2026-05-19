@@ -2,16 +2,16 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler, SetEnvironmentVariable, TimerAction
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration
 from launch_ros.actions import Node
-import xacro
 
 
 def generate_launch_description():
+    model = LaunchConfiguration("model")
     world = LaunchConfiguration("world")
     robot_name = LaunchConfiguration("robot_name")
     robot_x = LaunchConfiguration("robot_x")
@@ -38,16 +38,20 @@ def generate_launch_description():
     controllers_file = os.path.join(
         rx1_gazebo_share, "config", "rx1_harmonic_controllers.yaml"
     )
-    robot_description_file = os.path.join(
-        rx1_description_share, "urdf", "rx1.harmonic.urdf.xacro"
+    robot_description = Command(
+        [
+            FindExecutable(name="xacro"),
+            " ",
+            "--verbosity",
+            " 0 ",
+            model,
+            " ",
+            "controllers_file:=",
+            controllers_file,
+            " ",
+            "rgbd_topic_root:=/rx1/rgbd_camera",
+        ]
     )
-    robot_description = xacro.process_file(
-        robot_description_file,
-        mappings={
-            "controllers_file": controllers_file,
-            "rgbd_topic_root": "/rx1/rgbd_camera",
-        },
-    ).toxml()
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -130,7 +134,10 @@ def generate_launch_description():
     launch_joint_state_broadcaster = RegisterEventHandler(
         OnProcessExit(
             target_action=spawn_robot,
-            on_exit=[joint_state_broadcaster_spawner],
+            # Gazebo may report entity creation before gz_ros2_control has fully
+            # brought up controller_manager services. A short delay avoids a flaky
+            # race where the spawner exits before /controller_manager is ready.
+            on_exit=[TimerAction(period=5.0, actions=[joint_state_broadcaster_spawner])],
         )
     )
 
@@ -159,6 +166,12 @@ def generate_launch_description():
     )
 
     actions = [
+        DeclareLaunchArgument(
+            "model",
+            default_value=os.path.join(
+                rx1_description_share, "urdf", "rx1_optimized.harmonic.urdf.xacro"
+            ),
+        ),
         DeclareLaunchArgument(
             "world",
             default_value=os.path.join(

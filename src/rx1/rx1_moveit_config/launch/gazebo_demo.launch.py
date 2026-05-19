@@ -3,10 +3,11 @@ import yaml
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler
 from launch.conditions import IfCondition
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration
 from launch_ros.actions import Node
 def load_yaml(package_name, relative_path):
     package_path = get_package_share_directory(package_name)
@@ -23,6 +24,8 @@ def load_text(package_name, relative_path):
 
 
 def generate_launch_description():
+    moveit_model = LaunchConfiguration("moveit_model")
+    sim_model = LaunchConfiguration("sim_model")
     moveit_use_rviz = LaunchConfiguration("moveit_use_rviz")
     world = LaunchConfiguration("world")
     robot_name = LaunchConfiguration("robot_name")
@@ -31,10 +34,11 @@ def generate_launch_description():
     robot_z = LaunchConfiguration("robot_z")
 
     rx1_gazebo_share = get_package_share_directory("rx1_gazebo")
-    rx1_description_share = get_package_share_directory("rx1_description")
 
     robot_description = {
-        "robot_description": load_text("rx1_description", "urdf/rx1.urdf"),
+        "robot_description": Command(
+            [FindExecutable(name="xacro"), " ", "--verbosity", " 0 ", moveit_model]
+        ),
         "use_sim_time": True,
     }
     robot_description_semantic = {
@@ -96,6 +100,7 @@ def generate_launch_description():
             os.path.join(rx1_gazebo_share, "launch", "rx1_gazebo.launch.py")
         ),
         launch_arguments={
+            "model": sim_model,
             "world": world,
             "robot_name": robot_name,
             "robot_x": robot_x,
@@ -105,10 +110,27 @@ def generate_launch_description():
         }.items(),
     )
 
+    joint_state_timestamp_republisher = Node(
+        package="rx1_moveit_config",
+        executable="joint_state_timestamp_republisher.py",
+        name="joint_state_timestamp_republisher",
+        output="screen",
+        parameters=[{"use_sim_time": True}],
+    )
+
+    wait_for_sim_controller = Node(
+        package="rx1_moveit_config",
+        executable="wait_for_sim_controller.py",
+        name="wait_for_sim_controller",
+        output="screen",
+        parameters=[{"use_sim_time": True}],
+    )
+
     move_group = Node(
         package="moveit_ros_move_group",
         executable="move_group",
         output="screen",
+        remappings=[("joint_states", "/joint_states_moveit")],
         parameters=[
             robot_description,
             robot_description_semantic,
@@ -127,6 +149,7 @@ def generate_launch_description():
         name="rviz2",
         output="screen",
         condition=IfCondition(moveit_use_rviz),
+        remappings=[("joint_states", "/joint_states_moveit")],
         arguments=[
             "-d",
             os.path.join(
@@ -145,9 +168,36 @@ def generate_launch_description():
         ],
     )
 
+    launch_moveit_side = RegisterEventHandler(
+        OnProcessExit(
+            target_action=wait_for_sim_controller,
+            on_exit=[
+                joint_state_timestamp_republisher,
+                move_group,
+                rviz,
+            ],
+        )
+    )
+
     return LaunchDescription(
         [
             DeclareLaunchArgument("moveit_use_rviz", default_value="true"),
+            DeclareLaunchArgument(
+                "moveit_model",
+                default_value=os.path.join(
+                    get_package_share_directory("rx1_description"),
+                    "urdf",
+                    "rx1_optimized.urdf.xacro",
+                ),
+            ),
+            DeclareLaunchArgument(
+                "sim_model",
+                default_value=os.path.join(
+                    get_package_share_directory("rx1_description"),
+                    "urdf",
+                    "rx1_optimized.harmonic.urdf.xacro",
+                ),
+            ),
             DeclareLaunchArgument(
                 "world",
                 default_value=os.path.join(
@@ -159,7 +209,7 @@ def generate_launch_description():
             DeclareLaunchArgument("robot_y", default_value="0.0"),
             DeclareLaunchArgument("robot_z", default_value="0.0"),
             sim_launch,
-            move_group,
-            rviz,
+            wait_for_sim_controller,
+            launch_moveit_side,
         ]
     )

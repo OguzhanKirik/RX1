@@ -9,7 +9,9 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     rx1_gazebo_share = get_package_share_directory("rx1_gazebo")
+    rx1_description_share = get_package_share_directory("rx1_description")
 
+    model = LaunchConfiguration("model")
     world = LaunchConfiguration("world")
     robot_name = LaunchConfiguration("robot_name")
     robot_x = LaunchConfiguration("robot_x")
@@ -21,6 +23,7 @@ def generate_launch_description():
             os.path.join(rx1_gazebo_share, "launch", "rx1_gazebo.launch.py")
         ),
         launch_arguments={
+            "model": model,
             "world": world,
             "robot_name": robot_name,
             "robot_x": robot_x,
@@ -32,6 +35,12 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
+            DeclareLaunchArgument(
+                "model",
+                default_value=os.path.join(
+                    rx1_description_share, "urdf", "rx1_optimized.harmonic.urdf.xacro"
+                ),
+            ),
             DeclareLaunchArgument(
                 "world",
                 default_value=os.path.join(

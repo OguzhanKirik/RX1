@@ -5,7 +5,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.conditions import IfCondition, UnlessCondition
-from launch.substitutions import LaunchConfiguration, PythonExpression
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
@@ -24,6 +24,7 @@ def load_text(package_name, relative_path):
 
 
 def generate_launch_description():
+    model = LaunchConfiguration("model")
     use_rviz = LaunchConfiguration("use_rviz")
     use_gui = LaunchConfiguration("use_gui")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
@@ -31,9 +32,11 @@ def generate_launch_description():
         get_package_share_directory("rx1_moveit_config"), "config", "moveit.rviz"
     )
 
-    robot_description_content = load_text("rx1_description", "urdf/rx1.urdf")
-
-    robot_description = {"robot_description": robot_description_content}
+    robot_description = {
+        "robot_description": Command(
+            [FindExecutable(name="xacro"), " ", "--verbosity", " 0 ", model]
+        )
+    }
     robot_description_semantic = {
         "robot_description_semantic": load_text("rx1_moveit_config", "config/rx1.srdf")
     }
@@ -83,6 +86,14 @@ def generate_launch_description():
         DeclareLaunchArgument("use_rviz", default_value="true"),
         DeclareLaunchArgument("use_gui", default_value="false"),
         DeclareLaunchArgument("use_fake_hardware", default_value="true"),
+        DeclareLaunchArgument(
+            "model",
+            default_value=os.path.join(
+                get_package_share_directory("rx1_description"),
+                "urdf",
+                "rx1_optimized.urdf.xacro",
+            ),
+        ),
         Node(
             package="joint_state_publisher_gui",
             executable="joint_state_publisher_gui",

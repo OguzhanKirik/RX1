@@ -9,6 +9,8 @@ install(DIRECTORY config launch
 
 install(PROGRAMS
   scripts/fake_joint_trajectory_controller.py
+  scripts/joint_state_timestamp_republisher.py
+  scripts/wait_for_sim_controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
