@@ -3,7 +3,7 @@ project(rx1_gazebo)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY config launch scripts worlds
+install(DIRECTORY config launch rviz scripts worlds
   DESTINATION share/${PROJECT_NAME}
 )
 

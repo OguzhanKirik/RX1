@@ -106,6 +106,8 @@ def generate_launch_description():
             "/controller_manager",
             "--controller-manager-timeout",
             "120",
+            "--switch-timeout",
+            "30.0",
         ],
         output="screen",
     )
@@ -119,6 +121,8 @@ def generate_launch_description():
             "/controller_manager",
             "--controller-manager-timeout",
             "120",
+            "--switch-timeout",
+            "30.0",
         ],
         output="screen",
     )
@@ -142,9 +146,14 @@ def generate_launch_description():
         executable="rviz2",
         arguments=[
             "-d",
-            os.path.join(rx1_description_share, "rviz", "urdf.rviz"),
+            os.path.join(rx1_gazebo_share, "rviz", "gazebo.rviz"),
         ],
-        parameters=[{"use_sim_time": True}],
+        parameters=[
+            {
+                "use_sim_time": True,
+                "robot_description": robot_description,
+            }
+        ],
         condition=IfCondition(use_rviz),
         output="screen",
     )
